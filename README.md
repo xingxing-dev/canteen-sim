@@ -170,9 +170,24 @@ npm run test:coverage
 npm run lint
 ```
 
-## 版本历史
+## 版本管理与更新流程
 
-参见 [CHANGELOG.md](./CHANGELOG.md)
+项目使用语义化版本 + CHANGELOG 记录变更。
+
+```bash
+# 1. 修改代码 / 新增功能 / 修复 bug
+# 2. 在 CHANGELOG.md 的 [Unreleased] 下记录本次变更
+# 3. 提交并推送
+git add -A
+git commit -m "feat: 新功能描述"   # 或 fix: / docs: / refactor:
+git push
+
+# GitHub Actions 自动：运行测试 → 构建 → 部署到 GitHub Pages
+```
+
+发版时将 `[Unreleased]` 改为版本号和日期，并更新 `package.json` 中的 version。
+
+完整版本历史参见 [CHANGELOG.md](./CHANGELOG.md)
 
 ## 许可
 
